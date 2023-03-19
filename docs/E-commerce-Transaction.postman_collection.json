@@ -1,0 +1,1081 @@
+{
+	"info": {
+		"_postman_id": "11c649e4-3ce0-462e-8253-cc34e6e88b98",
+		"name": "E-commerce Transaction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13234785"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/user?order_by=codot&order_type=DESC",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"user"
+							],
+							"query": [
+								{
+									"key": "pagination",
+									"value": "true",
+									"description": "{boolean} [pagination=true] enable/disable pagination",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "{number} [page=1] page number if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "row",
+									"value": "2",
+									"description": "{number} [row=10] rows per page if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "satu",
+									"description": "{string} [search] filter by name",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "codot",
+									"description": "{string} [order_by='id'] order by column name"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC",
+									"description": "{'ASC'|'DESC'} [order_type='ASC'] order type"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/user",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-jb1fsrm0KinqvFEtb5xM7DlQvd8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Mar 2023 17:30:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"response\": {\n        \"count\": 3,\n        \"rows\": [\n            {\n                \"id\": 1,\n                \"name\": \"User Satu\",\n                \"created_at\": \"2023-03-18T15:30:37.997Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"User Dua\",\n                \"created_at\": \"2023-03-18T15:30:37.997Z\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"User Tiga\",\n                \"created_at\": \"2023-03-18T15:30:37.997Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/user/:userId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/user/:userId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"user",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "149"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"95-NAafiD5nsgdZmtJDYmOvWlzx3lw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Mar 2023 13:53:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"response\": {\n        \"id\": 1,\n        \"name\": \"User Satu\",\n        \"created_at\": \"2023-03-18T15:30:37.997Z\",\n        \"updated_at\": \"2023-03-18T15:30:37.997Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/product?order_by=name&order_type=DESC",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"product"
+							],
+							"query": [
+								{
+									"key": "pagination",
+									"value": "true",
+									"description": "{boolean} [pagination=true] enable/disable pagination",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "{number} [page=1] page number if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "row",
+									"value": "2",
+									"description": "{number} [row=10] rows per page if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "satu",
+									"description": "{string} [search] filter by name",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "name",
+									"description": "{string} [order_by='id'] order by column name"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC",
+									"description": "{'ASC'|'DESC'} [order_type='ASC'] order type"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/product?order_by=name&order_type=DESC",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"product"
+									],
+									"query": [
+										{
+											"key": "pagination",
+											"value": "true",
+											"description": "{boolean} [pagination=true] enable/disable pagination",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "{number} [page=1] page number if pagination is enabled",
+											"disabled": true
+										},
+										{
+											"key": "row",
+											"value": "2",
+											"description": "{number} [row=10] rows per page if pagination is enabled",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "satu",
+											"description": "{string} [search] filter by name",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "name",
+											"description": "{string} [order_by='id'] order by column name"
+										},
+										{
+											"key": "order_type",
+											"value": "DESC",
+											"description": "{'ASC'|'DESC'} [order_type='ASC'] order type"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-kOlrWUwjxW0cAwerZla9hBhAFHY\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Mar 2023 18:00:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"response\": {\n        \"count\": 3,\n        \"rows\": [\n            {\n                \"id\": 3,\n                \"name\": \"Product C\",\n                \"price\": 30000,\n                \"stock\": 3\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Product B\",\n                \"price\": 20000,\n                \"stock\": 25\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Product A\",\n                \"price\": 10000,\n                \"stock\": 10\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/product/:productId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/product/:productId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"product",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dc-ceL6OMRZY2aspXDprbUd4OO5eto\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Mar 2023 14:36:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"response\": {\n        \"id\": 2,\n        \"name\": \"Product B\",\n        \"price\": 20000,\n        \"description\": \"Description B\",\n        \"stock\": 24,\n        \"stock_alert\": 5,\n        \"created_at\": \"2023-03-18T15:30:29.750Z\",\n        \"updated_at\": \"2023-03-19T07:33:46.033Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/transaction?order_by=id&order_type=DESC",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "pagination",
+									"value": "true",
+									"description": "{boolean} [pagination=true] enable/disable pagination",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "{number} [page=1] page number if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "row",
+									"value": "2",
+									"description": "{number} [row=10] rows per page if pagination is enabled",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "satu",
+									"description": "{string} [search] filter by name",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "id",
+									"description": "{string} [order_by='id'] order by column name"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC",
+									"description": "{'ASC'|'DESC'} [order_type='ASC'] order type"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/transaction?order_by=id&order_type=DESC",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "pagination",
+											"value": "true",
+											"description": "{boolean} [pagination=true] enable/disable pagination",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "{number} [page=1] page number if pagination is enabled",
+											"disabled": true
+										},
+										{
+											"key": "row",
+											"value": "2",
+											"description": "{number} [row=10] rows per page if pagination is enabled",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "satu",
+											"description": "{string} [search] filter by name",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "id",
+											"description": "{string} [order_by='id'] order by column name"
+										},
+										{
+											"key": "order_type",
+											"value": "DESC",
+											"description": "{'ASC'|'DESC'} [order_type='ASC'] order type"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "945"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b1-bKunxGyXG5Lkb+Qt5LP0mrLRagg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Mar 2023 14:37:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"response\": {\n        \"count\": 20,\n        \"rows\": [\n            {\n                \"id\": 20,\n                \"user_id\": 2,\n                \"product_id\": 2,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T07:36:48.044Z\"\n            },\n            {\n                \"id\": 19,\n                \"user_id\": 2,\n                \"product_id\": 2,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T07:33:46.039Z\"\n            },\n            {\n                \"id\": 18,\n                \"user_id\": 2,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.371Z\"\n            },\n            {\n                \"id\": 17,\n                \"user_id\": 1,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.368Z\"\n            },\n            {\n                \"id\": 16,\n                \"user_id\": 2,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.364Z\"\n            },\n            {\n                \"id\": 15,\n                \"user_id\": 1,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.360Z\"\n            },\n            {\n                \"id\": 14,\n                \"user_id\": 3,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.355Z\"\n            },\n            {\n                \"id\": 13,\n                \"user_id\": 3,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.350Z\"\n            },\n            {\n                \"id\": 12,\n                \"user_id\": 1,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.345Z\"\n            },\n            {\n                \"id\": 11,\n                \"user_id\": 2,\n                \"product_id\": 1,\n                \"quantity\": 1,\n                \"created_at\": \"2023-03-19T05:04:48.336Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-user-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "qty",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/{{API_VERSION}}/transaction",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"{{API_VERSION}}",
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "qty",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/{{API_VERSION}}/transaction",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"{{API_VERSION}}",
+										"transaction"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override, Accept-Encoding"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-JSNd253NQBBH4vIDVuo5si+Lg9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Mar 2023 11:03:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"response\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"product_id\": 1,\n        \"quantity\": 2,\n        \"updated_at\": \"2023-03-19T04:03:06.333Z\",\n        \"created_at\": \"2023-03-19T04:03:06.333Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "API_VERSION",
+			"value": "v1.0",
+			"type": "string"
+		}
+	]
+}
