@@ -25,3 +25,8 @@ To run the project, use the following command:
     npm start
 
 This will start the server and you can access it through `http://localhost:3000`.
+
+## Feature
+- CRON Alert when stock less than or equal stock_alert (print to console)
+- Cache to redis when get detail product and user
+- Lock product when create transaction to handle multiple transaction on the same time
